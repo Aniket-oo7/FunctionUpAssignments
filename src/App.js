@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Makingform from './Components/oraganism/from/form';
+import Guess from './Components/oraganism/from/form';
 
 
 function App() {
   return (
     <div className="App">
-      <Makingform/>
+      <Guess/>
     </div>
   );
 }

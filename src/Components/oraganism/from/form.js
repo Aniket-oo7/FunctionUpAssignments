@@ -9,9 +9,9 @@ import './form.css'
 
 
 let luckyNumber = Math.round(Math.random() * 10);
-export default function Makingform() {
+export default function Guess() {
 
-    const [getNumber, setNumber] = useState()
+    const [number, setNumber] = useState()
     const [count , setCount] = useState(1)
 
     function handleChange(e){
@@ -21,37 +21,24 @@ export default function Makingform() {
 
 
     function checkNumber() {
-
-        
-    //   setCount(count + 1 )
-    //   console.log(count);
           
           setCount( count +1)
 
-        const guessnum = getNumber;
-       
+        const guessnum = number;
+        if(guessnum == luckyNumber)
+        {
+         alert(`congratulations you guessed the right number in ${count} attempts`)
+        }
         if (guessnum < luckyNumber) {
             alert("You guessed a smaller number")
         }
          if (guessnum > luckyNumber) {
             alert("You guessed a greater number",)
         }
-        if(guessnum == luckyNumber)
-        {
-         alert(`congratulations you guessed the right number in ${count} attempts`)
-        }
         
+ }
 
-    }
-
-    // function countcheck()
-    // {
-    //     setCount(count+1)
-    //     console.log(setCount)
-    // }
-
-
-    return (
+ return (
 
         <div className="container">
             <h1>Guess Lucky Number</h1>
@@ -59,11 +46,9 @@ export default function Makingform() {
             <button className="btn" onClick={checkNumber}>Match Number</button>
             <p>{luckyNumber}</p>
            
-           
         </div>
 
-
-    )
+     )
 
 
 }
