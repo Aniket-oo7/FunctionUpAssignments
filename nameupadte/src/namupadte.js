@@ -7,7 +7,7 @@ export function Nameupdate() {
     const [Dummyname, DummysetName] = useState('')
 
 
-    function chnagename(event)
+    function changename(event)
     {
         DummysetName(event.target.value)
     }
@@ -16,14 +16,10 @@ export function Nameupdate() {
        setName(Dummyname)
 
     }
-
-
-
-
-    return (
+return (
         <div className='div'>
             <div className='div1'>
-                <input className='input' placeholder='Add your name' onChange={chnagename}></input><br/>
+                <input className='input' placeholder='Add your name' onChange={changename}></input><br/>
                 <button className='btn' onClick={handlechange}>Submit</button>
                 <h2 className='para'>Hi My name is: {name}</h2>
             </div>
