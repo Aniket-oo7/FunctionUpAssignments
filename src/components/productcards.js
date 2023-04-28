@@ -14,7 +14,7 @@ const Productcard = ({ data }) => {
             return (
                 (
                     <div key={index} className='card'>
-                        <div className='card2'>
+                        <div className='childCard'>
                             <img src={item.productPic} />
                             <h3 className="name">{item.productName}</h3>
                             <p className="description">{item.productDescription}</p>
