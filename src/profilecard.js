@@ -5,7 +5,7 @@ export function Profile(props) {
     const { name, designation, jobDiscription, image, } = props
 
     function Buttonclick() {
-        alert('Saurabh Sakhare')
+        alert('Jack Winbow')
     }
 
     return (
