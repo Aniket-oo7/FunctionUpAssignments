@@ -1,53 +1,23 @@
-import React, { useState } from 'react';
-import './user.css'
+import React ,{useEffect, useState} from 'react'
 
-
- function CardMaking()
+function FetchData()
 {
-    const [index,setIndex]=useState(0)
-    const [people,setPeople]=useState([])
+    const [ image,setImage]=useState('')
 
-
-   async function handleclick()
-   {  
-    
-    try{
-        const response= await fetch('https://reqres.in/api/users/')
-        const Data= await response.json()
-        // console.log(Data.data[0],"i am in try ")
-        if(index==6)
+    useEffect(()=>
     {
-    setIndex(0)
-    }
-    else
-    {
-        setIndex(index+1)
-        setPeople(Data.data[index])
-        
-    }
-        
-    
-     }
-     catch(error){
-         console.log('i am from catch' ,error)
-     }}
+    fetch('https://dog.ceo/api/breeds/image/random')
+    .then((data)=> data.json())
+    .then ((response)=> setImage(response.message))
+    .catch((error) => console.log(error))  
 
 
+    },[])
 
-     return(
-        <div className='App'>
-        <div className='CardPara'>
-            <img src={people.avatar}/>
-            <p className='para'>ID={people.id}</p>
-            <p className='para'>Email={people.email}</p>
-            <p className='para'>FirstName={people.first_name}</p>
-            <p className='para'>LastName={people.last_name}</p>   
-        </div>
-         <button className="btn" onClick={handleclick}>Get users</button>
-         </div>
-     );
-
-
-  
+    return(
+        <img src={image} style={{height : "300px", width : "300px",
+        marginTop:"120px",borderRadius:"20px",boxShadow: " rgba(0, 0, 0, 0.56) 0px 22px 70px 4px"}}/>
+    )
 }
-export default CardMaking
+
+export default FetchData
