@@ -1,0 +1,36 @@
+.img{
+    height: 110px;
+    width: 90px;
+    border-radius: 60px;
+}
+
+
+.name{
+    color: rgb(8, 7, 8);
+}
+  
+
+.post{
+    font-size: small;
+    font-weight: bold;
+    color: rgb(45, 104, 172);
+}
+
+
+
+.exp{
+font-weight: lighter;
+font-size: small;
+color: rgb(83, 16, 39);
+}
+
+.card{
+    align-items: center;
+    line-height: 5px;
+    background-color: rgb(210, 232, 248);
+    max-height: 220px;
+    min-width: 200px;
+    border-radius: 12px;
+    margin-right: 2rem;
+    padding: 2px;
+}
