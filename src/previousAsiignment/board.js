@@ -24,8 +24,11 @@ export default function Board(){
            
            if(checkWin(square)){
             alert('winner')
-           }
       }
+    
+    }
+
+
       const checkWin = (board) => {
         const conditions = [
             [0,1,2],
@@ -52,6 +55,8 @@ export default function Board(){
 const refresh = () => {
     setBoard(" ")
 }   
+
+
     return (
         <div className="head">
         <h1 className="heading">Tic Tac Toe</h1>

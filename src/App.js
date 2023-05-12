@@ -1,12 +1,40 @@
-// import logo from './logo.svg';
-import './App.css';
-// import FetchData from './atom/list';
-// import Scrollbar from './components/organisms/scrollbar';
-import styles from './App.module.css'
-import Board from './components/board';
-
+import React, { useState } from 'react'
+import "./App.css"
+import TodoInput from './components/molecules/TodoInput'
+import Todolist from './components/molecules/TodoList';
 function App() {
+  const [listTodo,setListTodo]=useState([]);
+  
+  let addList = (inputText)=>{
+    if(inputText!=='')
+      setListTodo([...listTodo,inputText]);
+  }
+  const deleteListItem = (key)=>{
+    let newListTodo = [...listTodo];
+    newListTodo.splice(key,1)
+    setListTodo([...newListTodo])
+  }
   return (
-   <Board />
-)
+    <div className="main-container">
+      <div className="center-container">
+        <h1 className="app-heading">TODO</h1>
+        <hr/>
+        {listTodo.map((listItem,i)=>{
+          return (
+            <Todolist key={i} index={i} item={listItem} deleteItem={deleteListItem}/>
+          )
+        })}
+        <br/>
+        <TodoInput addList={addList}/>
+      </div>
+    </div>
+  )
 }
+
+export default App
+
+
+
+
+
+
