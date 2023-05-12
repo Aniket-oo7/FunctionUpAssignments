@@ -1,0 +1,23 @@
+.heading{
+    color: white;
+    background-color: black;
+    text-align: center;
+    }
+    
+    td{
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        border: 1px solid lightblue;
+        font-size: 45px;
+    }
+    table{
+        margin-left: 38%;
+    }
+    .button{
+     margin-left: 40%;
+    background-color: rgb(41, 146, 146);
+    border-radius: 4px;
+    border: none;
+    color: whitesmoke;
+    }
